@@ -1,0 +1,20 @@
+    <h1 class="display-5 col-md-2"> Your Bill </h1>
+    <h3 class="col-md-4"> You have to pay - {{overall}}</h3>   
+<div class="row">
+    <div class="card col-md-4" *ngFor = "let c of bill_details">
+        <div class="card-body row">
+            <h5 class="card-title col-md-8"> Product Name : {{ c.name }} </h5>
+            <p class="card-text col-md-4">  {{ c.category }} </p>
+        </div>
+        <div class="card-body">
+            <p class="card-text"> Base Price is : {{ c.basePrice }} </p>
+            <p class="card-text"> Discount is : {{ c.discount }} </p>
+            <!-- <div class="card-text" *ngFor = "let charges of c">
+                <p class="card-text"> GST added : {{ charges.gst }} </p>
+                <p class="card-text"> Delivery Charge added : {{ c.delivery }} </p> 
+            </div> -->
+            <p class="card-text"> Price including GST and Delivery Charge is : {{ c.finalPrice }} </p>
+
+        </div>
+    </div>
+</div>

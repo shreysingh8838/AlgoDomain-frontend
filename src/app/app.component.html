@@ -1,0 +1,42 @@
+<div class="conatiner-fluid">
+  <div class="row justify-content-md-center">
+    <h1 class="display-1 col-sm-6">Products</h1>
+    <div class="col-sm-2">
+      <br>
+      <!-- <button type="button" (click)="senddata()" class="btn btn-success"> GET YOUR CART </button> -->
+      <button type="button" (click)="senddata()" class="btn btn-success"> GET YOUR BILL</button>
+    </div>
+  </div>
+<ul class=" list-group-flush">
+  <div class="row">
+    <li class="list-group-item col-md-3">Product Name </li>
+    <li class="list-group-item col-md-3">Product Type</li>
+    <li class="list-group-item col-md-4">Price</li>
+  </div>
+</ul>
+
+  <ul class="list-group list-group-flush" *ngFor="let product of products;">
+    <div class="row">
+      <li class="list-group-item col-md-3 "> {{product.Product_name}} </li>
+      <li class="list-group-item col-md-3"> {{product.Product_type}} </li>
+      <li class="list-group-item col-md-4"> {{product.Product_price}} </li>
+      <div class="col-md-2">
+        <div class="row justify-content-sm-center">    
+          <button type="button" (click)="inc(product)" class="btn btn-warning col-sm-3"> + </button>
+          <button type="button" (click)="dec(product)" class="btn btn-danger col-sm-3"> - </button>
+        </div>
+      </div>
+      <!-- <div class="col-md-2">
+        <div class="row justify-content-sm-center">    
+          <button type="button" (click)="inc(product)" class="btn btn-warning col-sm-3"> + </button>
+          <button type="button" (click)="dec(product)" class="btn btn-danger col-sm-3"> - </button>
+        </div>
+      </div> -->
+    </div>
+  </ul>
+</div>
+<br>
+
+<app-cartitems [cart_items_details]="cart_itemshow"></app-cartitems>
+
+<app-bill [bill_details]="finalBill" [overall]="total" [charges]="" ></app-bill>
